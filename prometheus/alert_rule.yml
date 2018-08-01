@@ -1,0 +1,10 @@
+groups:
+- name: example
+  rules:
+  - alert: SlowResponse
+    expr: probe_duration_seconds > 20
+    for: 5m
+    labels:
+      severity: warn
+    annotations:
+      summary: "Scraping took long time"
